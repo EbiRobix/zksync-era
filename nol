@@ -1,0 +1,27 @@
+extern int NumBars = 500;
+extern int EnableAlerts = 1;
+extern int SignalID = 0;
+double Gda_88[];
+double Gda_92[];
+double Gd_96;
+double Gd_104 = 0.0;
+
+// E37F0136AA3FFAF149B351F6A4C948E9
+int init() {
+   SetIndexStyle(0, DRAW_ARROW);
+   SetIndexBuffer(0, Gda_88);
+   SetIndexArrow(0, 233);
+   SetIndexEmptyValue(0, 0.0);
+   SetIndexStyle(1, DRAW_ARROW);
+   SetIndexBuffer(1, Gda_92);
+   SetIndexArrow(1, 234);
+   SetIndexEmptyValue(1, 0.0);
+   Gd_96 = MarketInfo(Symbol(), MODE_SPREAD) * Point;
+   SetIndexDrawBegin(0, 0);
+   return (0);
+}
+
+// 52D46093050F38C27267BCE42543EF60
+int deinit() {
+   return (0);
+}
